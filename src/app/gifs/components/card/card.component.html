@@ -1,0 +1,13 @@
+<div
+  class="bg-white rounded-md flex flex-col justify-start items-center shadow-md"
+>
+  <shared-lazy-image
+    [url]="gif.images.downsized_medium.url"
+    [title]="gif.title"
+  ></shared-lazy-image>
+  <div class="flex items-center justify-center">
+    <p class="text-xl p-5 text-center">
+      {{ gif.title || "Sin titulo" }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="flex justify-center">
+  <img
+    [ngClass]="{ hidden: !hasLoaded }"
+    src="{{ this.url }}"
+    alt="{{ this.title }}"
+    class="rounded-ss-md rounded-se-md"
+    (load)="onLoaded()"
+  />
+  <img
+    *ngIf="!hasLoaded"
+    src="assets/loader.svg"
+    alt="loader"
+    class="mb-10 mt-20"
+  />
+</div>

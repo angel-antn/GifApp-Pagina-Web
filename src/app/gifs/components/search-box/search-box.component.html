@@ -1,0 +1,14 @@
+<div class="flex items-center gap-3">
+  <button class="md:hidden" (click)="changeShowStatus()">
+    <img src="assets/sidebar.svg" alt="sidebar" />
+  </button>
+  <h5 class="text-2xl mb-2">Buscar:</h5>
+</div>
+
+<input
+  type="text"
+  class="w-full border-1 transition ease-in-out delay-75 border-slate-200 p-2 rounded-md focus:border-blue-300 focus:outline-none"
+  placeholder="buscar gifs..."
+  (keyup.enter)="searchTag()"
+  #txtTagInput
+/>
