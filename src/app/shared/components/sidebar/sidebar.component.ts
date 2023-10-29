@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { GifsService } from 'src/app/gifs/services/gifs.service';
 import { SidebarStatusService } from 'src/app/gifs/services/sidebar-status.service';
 
@@ -28,5 +28,16 @@ export class SidebarComponent {
 
   changeShowStatus() {
     this.sidebarStatus.changeStatus();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (window.innerWidth >= 768) {
+      document.querySelector('html')?.classList.remove('overflow-hidden');
+    } else {
+      if (this.sidebarStatus.show) {
+        document.querySelector('html')?.classList.add('overflow-hidden');
+      }
+    }
   }
 }
