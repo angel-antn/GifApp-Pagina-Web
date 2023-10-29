@@ -31,9 +31,12 @@ export class SidebarComponent {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
+  onResize() {
     if (window.innerWidth >= 768) {
       document.querySelector('html')?.classList.remove('overflow-hidden');
+      if (this.sidebarStatus.show) {
+        this.sidebarStatus.changeStatus();
+      }
     } else {
       if (this.sidebarStatus.show) {
         document.querySelector('html')?.classList.add('overflow-hidden');
