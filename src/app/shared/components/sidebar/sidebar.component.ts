@@ -18,7 +18,7 @@ export class SidebarComponent {
   }
 
   searchTag(tag: string) {
-    this.sidebarStatus.changeStatus();
+    if (window.innerWidth < 768) this.sidebarStatus.changeStatus();
     return this.gifsService.searchTag(tag);
   }
 
